@@ -1,0 +1,6 @@
+install.packages("devtools")
+library (devtools)
+install_github ("genometra/SNPediaR/pkg")
+library (SNPediaR)
+install.packages("dplyr")
+library(dplyr)
