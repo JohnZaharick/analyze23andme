@@ -67,6 +67,8 @@ queriedSNPs <- cycleList(snpsToQuery)
 queriedSNPs <- unlist(queriedSNPs)
 SNPsAndPhenotypes = matrix(queriedSNPs, ncol=2, byrow=TRUE)
 colnames(SNPsAndPhenotypes) <- c("rsid","phenotype")
+#convert to data frame so we can use $ to select column
+SNPsAndPhenotypes <- as.data.frame(SNPsAndPhenotypes)
 
 #filter SNPs once again, this time keeping only ones with summaries
 reducedSNPs <- reducedSNPs %>% filter(reducedSNPs$rsid %in% SNPsAndPhenotypes$rsid)
